@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  tictac-backend:
+    build: ./tictactoeback/tictacback
+    ports:
+      - "8080:8080" # Expose backend on port 8080
+
+  tictac-front:
+    build: ./tictactoefront/tictactoe
+    ports:
+      - "4200:4200" # Expose frontend on port 4200
