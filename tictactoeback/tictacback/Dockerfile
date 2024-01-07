@@ -19,9 +19,9 @@ COPY . /app
 EXPOSE 8080
 
 RUN mvn clean install
-
+RUN mvn clean package
 # The application's jar file (adjust the jar file name as per your project)
-COPY target/tictac-0.0.1-SNAPSHOT.jar /app/tictac.jar
+# COPY target/tictac-0.0.1-SNAPSHOT.jar /app/tictac.jar
 
 # Run the jar file
-CMD ["java", "-jar", "tictac.jar"]
+CMD ["java", "-jar", "target/tictac-0.0.1-SNAPSHOT.jar"]
