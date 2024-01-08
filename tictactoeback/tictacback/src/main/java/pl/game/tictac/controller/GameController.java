@@ -15,7 +15,7 @@ import pl.game.tictac.service.GameService;
 import java.util.List;
 @RestController
 @RequestMapping("/api/game")
-@CrossOrigin(origins = "http://54.86.211.202:80") // Angular app address
+// @CrossOrigin(origins = "http://54.86.211.202:80") // Angular app address
 public class GameController {
 
     @Autowired

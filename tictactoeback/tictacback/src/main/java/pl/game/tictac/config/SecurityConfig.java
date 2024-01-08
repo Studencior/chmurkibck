@@ -25,37 +25,40 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
+                .cors().and() // Use configured CORS
                 .authorizeHttpRequests(authz -> authz
-                        // Allow public access to certain get requests
-                        .requestMatchers(HttpMethod.GET, "/api/game/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/game/join/{gameId}").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/game/{gameId}").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/game/{gameId}/move").permitAll()
 
-//                        .requestMatchers(HttpMethod.POST, "/api/join/**").permitAll()
+//                         // Allow public access to certain get requests
+//                         .requestMatchers(HttpMethod.GET, "/api/game/**").permitAll()
+//                         .requestMatchers(HttpMethod.POST, "/api/game/join/{gameId}").permitAll()
+//                         .requestMatchers(HttpMethod.GET, "/api/game/{gameId}").permitAll()
+//                         .requestMatchers(HttpMethod.POST, "/api/game/{gameId}/move").permitAll()
 
-                        // Below are hypothetical endpoints you might have. Adjust them to fit your actual API.
-                                .requestMatchers(HttpMethod.POST, "/api/user/signup").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/api/user/leaderboard").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/user/login").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/game/create").permitAll()
-                        .requestMatchers("/h2-console/**").permitAll() // Allow H2 console access
-                        // All other requests should be authenticated
-                        .anyRequest().authenticated()
+// //                        .requestMatchers(HttpMethod.POST, "/api/join/**").permitAll()
+
+//                         // Below are hypothetical endpoints you might have. Adjust them to fit your actual API.
+//                                 .requestMatchers(HttpMethod.POST, "/api/user/signup").permitAll()
+//                                 .requestMatchers(HttpMethod.GET, "/api/user/leaderboard").permitAll()
+//                         .requestMatchers(HttpMethod.POST, "/api/user/login").permitAll()
+//                         .requestMatchers(HttpMethod.POST, "/api/game/create").permitAll()
+//                         .requestMatchers("/h2-console/**").permitAll() // Allow H2 console access
+//                         // All other requests should be authenticated
+//                         .anyRequest().authenticated()
+                        .anyRequest().permitAll()
+                        
                 )
-                // To allow H2 console frame and disable CSRF for H2 console
-                .headers(headers -> headers.frameOptions(Customizer.withDefaults()).disable())                .csrf(csrf -> csrf.disable())
-                // If using CorsConfigurationSource, apply CORS configuration
-                .cors(withDefaults())
-                // Basic HTTP authentication can be used or replaced with formLogin() based on your needs
-                .httpBasic(withDefaults())
-                // If you are using JWT tokens, enable and configure OAuth2 resource server support
-                // .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()))
+                
+                .headers(headers -> headers.frameOptions(Customizer.withDefaults()).disable())                
+                .csrf(csrf -> csrf.disable())
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 )
-                // Enable H2 console
                 .build();
+                // .httpBasic(withDefaults())
+                // .sessionManagement(session -> session
+                //         .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                // )
+                // .build();
     }
 
 }
