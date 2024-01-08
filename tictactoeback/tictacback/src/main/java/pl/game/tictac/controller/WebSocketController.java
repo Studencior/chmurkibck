@@ -17,7 +17,7 @@ import pl.game.tictac.repository.PlayerRepository;
 import pl.game.tictac.service.GameService;
 
 @Controller
-@CrossOrigin(origins = "http://localhost:80") // Angular app address
+@CrossOrigin(origins = "http://54.86.211.202:80") // Angular app address
 public class WebSocketController {
 
     @Autowired

@@ -10,7 +10,7 @@ import { getPlayerUsernameFromToken } from './jwt.util';
   providedIn: 'root',
 })
 export class GameApiService {
-  private apiUrl = 'http://localhost:8080/api'; // URL to your Spring Boot API
+  private apiUrl = 'http://54.165.154.94:8080/api'; // URL to your Spring Boot API
   private socket$: WebSocketSubject<any> | undefined;
 
   constructor(private http: HttpClient) {}

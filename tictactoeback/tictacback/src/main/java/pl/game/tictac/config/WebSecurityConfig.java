@@ -25,11 +25,12 @@ public class WebSecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:80")); // Specify the exact allowed origin
+        // configuration.setAllowedOrigins(Arrays.asList("http://localhost:80")); // Specify the exact allowed origin
+        configuration.setAllowedOrigins(Arrays.asList("http://54.86.211.202:80")); // Specify the exact allowed origin
         // or use patterns
         // configuration.setAllowedOriginPatterns(Arrays.asList("http://localhost:*"));
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE"));
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
+        configuration.setAllowedHeaders(Arrays.asList("*"));
         configuration.setAllowCredentials(true); // Allows credentials only for the specified origins
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
