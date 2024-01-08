@@ -1,5 +1,5 @@
 # Use a base image with OpenJDK 17
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17
 
 # Set environment variables for Maven
 ENV MAVEN_VERSION 3.8.8
