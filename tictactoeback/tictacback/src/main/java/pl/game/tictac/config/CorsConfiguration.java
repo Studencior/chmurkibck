@@ -14,8 +14,8 @@ public class CorsConfiguration {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://http://54.86.211.202:80") // Replace with the Angular app URL
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                        .allowedOrigins("http://http://54.86.211.202") // Replace with the Angular app URL
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
             }
