@@ -7,7 +7,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import pl.game.tictac.dto.GameJoinMessage;
+// import pl.game.tictac.dto.GameJoinMessage;
 import pl.game.tictac.dto.GameMove;
 import pl.game.tictac.dto.GameState;
 import pl.game.tictac.dto.GameUpdate;
@@ -25,22 +25,22 @@ public class WebSocketController {
     @Autowired
     private PlayerRepository playerRepository;
 
-    @MessageMapping("/game/move/{gameId}")
-    @SendTo("/topic/game/{gameId}")
-    public GameState makeMove(@DestinationVariable Long gameId, GameMove move) {
-        return gameService.processMove(gameId, move);
-    }
+    // @MessageMapping("/game/move/{gameId}")
+    // @SendTo("/topic/game/{gameId}")
+    // public GameState makeMove(@DestinationVariable Long gameId, GameMove move) {
+    //     return gameService.processMove(gameId, move);
+    // }
 
 
 
 
-    @MessageMapping("/game/join/{gameId}")
-    @SendTo("/topic/game/{gameId}")
-    public GameUpdate joinGame(@DestinationVariable Long gameId, @Payload GameJoinMessage joinMessage) {
-        Player player = playerRepository.findByUsername(joinMessage.getUsername())
-                .orElseThrow(() -> new RuntimeException("Player not found"));
-        Game game = gameService.joinGame(gameId, player.getId());
-        return new GameUpdate(game);
-    }
+    // @MessageMapping("/game/join/{gameId}")
+    // @SendTo("/topic/game/{gameId}")
+    // public GameUpdate joinGame(@DestinationVariable Long gameId, @Payload GameJoinMessage joinMessage) {
+    //     Player player = playerRepository.findByUsername(joinMessage.getUsername())
+    //             .orElseThrow(() -> new RuntimeException("Player not found"));
+    //     Game game = gameService.joinGame(gameId, player.getId());
+    //     return new GameUpdate(game);
+    // }
     // ... other WebSocket-related methods ...
 }

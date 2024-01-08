@@ -24,11 +24,9 @@ pl/game/tictac/dto/UserDTO.class
 pl/game/tictac/dto/JwtResponse.class
 pl/game/tictac/model/Game$GameBuilder.class
 pl/game/tictac/model/Game$GameBuilderImpl.class
-pl/game/tictac/dto/GameDTO.class
 pl/game/tictac/dto/GameJoinRequest.class
 pl/game/tictac/TictacApplication.class
 pl/game/tictac/model/Player.class
 pl/game/tictac/model/Player$PlayerBuilder.class
-pl/game/tictac/dto/GameJoinMessage.class
 pl/game/tictac/service/GameService.class
 pl/game/tictac/dto/GameMove.class

@@ -2,7 +2,6 @@ package pl.game.tictac.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.game.tictac.dto.GameDTO;
 import pl.game.tictac.dto.GameMove;
 import pl.game.tictac.dto.GameState;
 import pl.game.tictac.dto.MoveRequest;

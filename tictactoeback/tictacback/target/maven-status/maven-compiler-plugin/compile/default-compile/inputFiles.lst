@@ -17,9 +17,7 @@
 /home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/service/JwtUtil.java
 /home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/config/SecurityConfig.java
 /home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/dto/UserDTO.java
-/home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/dto/GameJoinMessage.java
 /home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/service/PlayerService.java
-/home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/dto/GameDTO.java
 /home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/dto/GameMove.java
 /home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/controller/WebSocketController.java
 /home/daniel/Studia/chmurkibck/tictactoeback/tictacback/src/main/java/pl/game/tictac/config/WebSocketConfig.java
