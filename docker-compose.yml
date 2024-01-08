@@ -8,4 +8,4 @@ services:
   tictac-front:
     build: ./tictactoefront/tictactoe
     ports:
-      - "4200:4200" # Expose frontend on port 4200
+      - "80:80" # Expose frontend on port 4200

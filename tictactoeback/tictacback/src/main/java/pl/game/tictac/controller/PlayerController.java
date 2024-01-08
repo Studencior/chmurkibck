@@ -18,7 +18,7 @@ import java.util.Collections;
 import java.util.List;
 @RestController
 @RequestMapping("/api/user")
-@CrossOrigin(origins = "http://localhost:4200") // Angular app address
+@CrossOrigin(origins = "http://localhost:80") // Angular app address
 public class PlayerController {
 
     @Autowired
